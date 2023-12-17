@@ -1,11 +1,3 @@
-<?php
-  require("../config.php");
-  session_start();
-  if (!isset($_SESSION['id_mahasiswa'])) {
-      header("Location: ../login.php");
-  }
-?>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -17,7 +9,7 @@
     />
     <link rel="icon" type="image/png" href="../../assets/img/favicon.png" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>Dashboard Page</title>
+    <title>Dashboard Page : Admin</title>
     <meta
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no"
       name="viewport"
@@ -47,33 +39,7 @@
 
   <body class="">
     <div class="wrapper">
-      <div class="sidebar" data-color="white" data-active-color="danger">
-        <div class="logo">
-          <a href="#" class="simple-text logo-mini">
-            <div class="logo-image-small">
-              <img src="../../assets/img/logo-small.png" />
-            </div>
-            <!-- <p>CT</p> -->
-          </a>
-          <a href="#" class="simple-text logo-normal"> Creative Tim </a>
-        </div>
-        <div class="sidebar-wrapper">
-          <ul class="nav">
-            <li class="active">
-              <a href="./dashboard.php">
-                <i class="nc-icon nc-bank"></i>
-                <p>Dashboard</p>
-              </a>
-            </li>
-            <li>
-              <a href="./user.php">
-                <i class="nc-icon nc-single-02"></i>
-                <p>User Profile</p>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
+      <?php require('Navbar.php'); ?>
       <div class="main-panel">
         <!-- Navbar -->
         <nav
@@ -88,7 +54,7 @@
                   <span class="navbar-toggler-bar bar3"></span>
                 </button>
               </div>
-              <a class="navbar-brand" href="javascript:;">Dashboard Page</a>
+              <a class="navbar-brand" href="javascript:;">Dashboard</a>
             </div>
             <button
               class="navbar-toggler"
@@ -138,9 +104,17 @@
                       </div>
                     </div>
                     <div class="col-7 col-md-8">
+                      <?php
+                        $query = "SELECT * FROM total_kas";
+                        $res = $db->jalankan_query($query);
+                        if (mysqli_num_rows($res) > 0) {
+                          $row = mysqli_fetch_assoc($res);
+                          $jumlah_kas = $row['jumlah_kas'];
+                        }
+                      ?>
                       <div class="numbers">
                         <p class="card-category">Total Saldo Kas Kelas</p>
-                        <p class="card-title">Rp 625000</p>
+                        <p class="card-title"><?= $jumlah_kas; ?></p>
                         <p></p>
                       </div>
                     </div>
@@ -155,7 +129,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="col-lg-4 col-md-6 col-sm-6">
               <div class="card card-stats">
                 <div class="card-body">
                   <div class="row">
@@ -176,15 +150,27 @@
                 <div class="card-footer">
                   <hr />
                   <div
-                    class="stats d-flex align-items-center justify-content-around"
+                    class="stats d-flex align-items-center justify-content-between"
                   >
                     <div class="d-flex">
                       <i class="fa fa-calendar-o"></i>
                       sampai 30 Desember 2023
                     </div>
-                    <button class="btn btn-primary btn-round">
-                      Bayar Sekarang
-                    </button>
+                    <?php 
+                      if($status_bayar == 0) {
+                    ?>
+                      <button class="btn btn-primary btn-round">
+                        Bayar Sekarang
+                      </button>
+                    <?php
+                      } else {
+                    ?>
+                      <button class="btn btn-primary btn-round" disabled>
+                        Sudah Bayar
+                      </button>
+                    <?php
+                      }
+                    ?>
                   </div>
                 </div>
               </div>

@@ -1,17 +1,3 @@
-<!--
-=========================================================
-* Dashboard Page - v2.0.1
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/paper-dashboard-2
-* Copyright 2020 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
--->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -49,38 +35,7 @@ Coded by www.creative-tim.com
 
   <body>
     <div class="wrapper">
-      <div class="sidebar" data-color="white" data-active-color="danger">
-        <div class="logo">
-          <a href="#" class="simple-text logo-mini">
-            <div class="logo-image-small">
-              <img src="../../assets/img/logo-small.png" />
-            </div>
-            <!-- <p>CT</p> -->
-          </a>
-          <a href="#" class="simple-text logo-normal">
-            Creative Tim
-            <!-- <div class="logo-image-big">
-            <img src="../../assets/img/logo-big.png">
-          </div> -->
-          </a>
-        </div>
-        <div class="sidebar-wrapper">
-          <ul class="nav">
-            <li>
-              <a href="./dashboard.php">
-                <i class="nc-icon nc-bank"></i>
-                <p>Dashboard</p>
-              </a>
-            </li>
-            <li class="active">
-              <a href="./user.php">
-                <i class="nc-icon nc-single-02"></i>
-                <p>User Profile</p>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
+      <?php require('Navbar.php'); ?>
       <div class="main-panel">
         <!-- Navbar -->
         <nav
@@ -95,7 +50,7 @@ Coded by www.creative-tim.com
                   <span class="navbar-toggler-bar bar3"></span>
                 </button>
               </div>
-              <a class="navbar-brand" href="javascript:;">Dashboard Page</a>
+              <a class="navbar-brand" href="javascript:;">User Profile</a>
             </div>
             <button
               class="navbar-toggler"
@@ -118,7 +73,8 @@ Coded by www.creative-tim.com
                 <li class="nav-item">
                   <a
                     class="nav-link btn-rotate"
-                    href="javascript:;"
+                    onclick="confirm('Yakin ingin logout?')"
+                    href="logout.php"
                     style="display: flex; gap: 10px"
                   >
                     <i class="nc-icon nc-button-power"></i>
@@ -147,9 +103,9 @@ Coded by www.creative-tim.com
                         src="../../assets/img/mike.jpg"
                         alt="..."
                       />
-                      <h5 class="title">Chet Faker</h5>
+                      <h5 class="title"><?= $nama_mhs;?></h5>
                     </a>
-                    <p class="description">Mahasiswa</p>
+                    <p class="description"><?= $_SESSION['role']?></p>
                     <button
                       class="btn btn-primary btn-round pl-7 pr-7"
                       data-bs-toggle="modal"
@@ -176,7 +132,7 @@ Coded by www.creative-tim.com
                             type="text"
                             class="form-control"
                             disabled=""
-                            value="33422206"
+                            value="<?= $id_mahasiswa; ?>"
                           />
                         </div>
                       </div>
@@ -189,7 +145,7 @@ Coded by www.creative-tim.com
                             type="text"
                             class="form-control"
                             placeholder="Company"
-                            value="Chet"
+                            value="<?= $nama_mhs; ?>"
                           />
                         </div>
                       </div>
@@ -200,8 +156,8 @@ Coded by www.creative-tim.com
                             type="email"
                             class="form-control"
                             placeholder="Email"
-                            value="33422201@kelastanpaac.my.id"
-                          />
+                            value="<?= $email ?>"
+                          /> 
                         </div>
                       </div>
                     </div>
