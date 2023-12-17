@@ -4,7 +4,7 @@ class Database
 {
   var $host = "localhost";
   var $email = "root";
-  var $password = "gilang123";
+  var $password = "";
   var $database = "simkas_ikc";
   var $conn = "";
 
@@ -46,5 +46,23 @@ class Database
               echo "<script>alert('email / Password Salah!')</script>";
           }
       }
+  }
+
+  function tambah_kas_masuk()
+  {
+    if (isset($_POST["simpan"])) {
+      $tanggal_masuk = date("Y-m-d");
+      $deskripsi = $_POST['deskripsi'];
+      $nominal = $_POST['nominal'];
+      $status = '{"sudah_bayar": [], "proses_konfirm": []}';
+      
+      $query = "INSERT INTO data_kas_masuk_keluar VALUES ('', '$tanggal_masuk', '$deskripsi', '$nominal', '$status')";
+      $res = mysqli_query($this->conn, $query);
+      if($res) {
+        echo "<script>document.write(`Berhasil`)</script>";
+      } else {
+        echo "<script>document.write(`Gagal`)</script>";
+      }
+    }
   }
 }
