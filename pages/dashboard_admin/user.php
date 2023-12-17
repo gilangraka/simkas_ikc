@@ -1,17 +1,3 @@
-<!--
-=========================================================
-* Dashboard Page - v2.0.1
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/paper-dashboard-2
-* Copyright 2020 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
--->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -49,38 +35,7 @@ Coded by www.creative-tim.com
 
   <body>
     <div class="wrapper">
-      <div class="sidebar" data-color="white" data-active-color="danger">
-        <div class="logo">
-          <a href="#" class="simple-text logo-mini">
-            <div class="logo-image-small">
-              <img src="../../assets/img/logo-small.png" />
-            </div>
-            <!-- <p>CT</p> -->
-          </a>
-          <a href="#" class="simple-text logo-normal">
-            Creative Tim
-            <!-- <div class="logo-image-big">
-            <img src="../../assets/img/logo-big.png">
-          </div> -->
-          </a>
-        </div>
-        <div class="sidebar-wrapper">
-          <ul class="nav">
-            <li>
-              <a href="./dashboard.html">
-                <i class="nc-icon nc-bank"></i>
-                <p>Dashboard</p>
-              </a>
-            </li>
-            <li class="active">
-              <a href="./user.html">
-                <i class="nc-icon nc-single-02"></i>
-                <p>User Profile</p>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
+      <?php require('Navbar.php'); ?>
       <div class="main-panel">
         <!-- Navbar -->
         <nav
@@ -95,7 +50,7 @@ Coded by www.creative-tim.com
                   <span class="navbar-toggler-bar bar3"></span>
                 </button>
               </div>
-              <a class="navbar-brand" href="javascript:;">Dashboard Page</a>
+              <a class="navbar-brand" href="javascript:;">User Profile</a>
             </div>
             <button
               class="navbar-toggler"
@@ -118,7 +73,8 @@ Coded by www.creative-tim.com
                 <li class="nav-item">
                   <a
                     class="nav-link btn-rotate"
-                    href="javascript:;"
+                    onclick="confirm('Yakin ingin logout?')"
+                    href="logout.php"
                     style="display: flex; gap: 10px"
                   >
                     <i class="nc-icon nc-button-power"></i>

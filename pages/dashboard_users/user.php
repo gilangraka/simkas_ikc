@@ -67,13 +67,13 @@ Coded by www.creative-tim.com
         <div class="sidebar-wrapper">
           <ul class="nav">
             <li>
-              <a href="./dashboard.html">
+              <a href="./dashboard.php">
                 <i class="nc-icon nc-bank"></i>
                 <p>Dashboard</p>
               </a>
             </li>
             <li class="active">
-              <a href="./user.html">
+              <a href="./user.php">
                 <i class="nc-icon nc-single-02"></i>
                 <p>User Profile</p>
               </a>
@@ -149,7 +149,7 @@ Coded by www.creative-tim.com
                       />
                       <h5 class="title">Chet Faker</h5>
                     </a>
-                    <p class="description">Administrator</p>
+                    <p class="description">Mahasiswa</p>
                     <button
                       class="btn btn-primary btn-round pl-7 pr-7"
                       data-bs-toggle="modal"

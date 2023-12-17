@@ -1,17 +1,11 @@
-<!--
-=========================================================
-* Paper Dashboard 2 - v2.0.1
-=========================================================
+<?php
+  require("../config.php");
+  session_start();
+  if (!isset($_SESSION['id_mahasiswa'])) {
+      header("Location: ../login.php");
+  }
+?>
 
-* Product Page: https://www.creative-tim.com/product/paper-dashboard-2
-* Copyright 2020 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
--->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -23,7 +17,7 @@ Coded by www.creative-tim.com
     />
     <link rel="icon" type="image/png" href="../../assets/img/favicon.png" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>Dashboard Page : Admin</title>
+    <title>Dashboard Page</title>
     <meta
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no"
       name="viewport"
@@ -66,13 +60,13 @@ Coded by www.creative-tim.com
         <div class="sidebar-wrapper">
           <ul class="nav">
             <li class="active">
-              <a href="./dashboard.html">
+              <a href="./dashboard.php">
                 <i class="nc-icon nc-bank"></i>
                 <p>Dashboard</p>
               </a>
             </li>
             <li>
-              <a href="./user.html">
+              <a href="./user.php">
                 <i class="nc-icon nc-single-02"></i>
                 <p>User Profile</p>
               </a>
@@ -117,7 +111,8 @@ Coded by www.creative-tim.com
                 <li class="nav-item">
                   <a
                     class="nav-link btn-rotate"
-                    href="javascript:;"
+                    onclick="confirm('Yakin ingin logout?')"
+                    href="logout.php"
                     style="display: flex; gap: 10px"
                   >
                     <i class="nc-icon nc-button-power"></i>
