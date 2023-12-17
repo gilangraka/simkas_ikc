@@ -103,9 +103,9 @@
                         src="../../assets/img/mike.jpg"
                         alt="..."
                       />
-                      <h5 class="title">Chet Faker</h5>
+                      <h5 class="title"><?= $nama_mhs;?></h5>
                     </a>
-                    <p class="description">Administrator</p>
+                    <p class="description"><?= $_SESSION['role']?></p>
                     <button
                       class="btn btn-primary btn-round pl-7 pr-7"
                       data-bs-toggle="modal"
@@ -132,7 +132,7 @@
                             type="text"
                             class="form-control"
                             disabled=""
-                            value="33422206"
+                            value="<?= $id_mahasiswa; ?>"
                           />
                         </div>
                       </div>
@@ -145,7 +145,7 @@
                             type="text"
                             class="form-control"
                             placeholder="Company"
-                            value="Chet"
+                            value="<?= $nama_mhs; ?>"
                           />
                         </div>
                       </div>
@@ -156,8 +156,8 @@
                             type="email"
                             class="form-control"
                             placeholder="Email"
-                            value="33422201@kelastanpaac.my.id"
-                          />
+                            value="<?= $email ?>"
+                          /> 
                         </div>
                       </div>
                     </div>

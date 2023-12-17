@@ -101,8 +101,6 @@
                             <th scope="col">ID Kas</th>
                             <th scope="col">Nama Mhs</th>
                             <th scope="col">Nominal</th>
-                            <th scope="col">Jenis Transfer</th>
-                            <th scope="col">Bukti Transfer</th>
                             <th scope="col">Konfirmasi</th>
                         </tr>
                     </thead>
@@ -118,9 +116,9 @@
             <script>
             
                 const dataPembayaran = [
-                    { no: 1, idMhs: 'M001', idKas: 'K001', namaMhs: 'Memek', nominal: 500000, jenisTransfer: 'Dana E-wallet', buktiTransfer: 'bukti1.jpg', konfirmasi: 'konfirmasi' },
-                    { no: 2, idMhs: 'M002', idKas: 'K002', namaMhs: 'Gawuk', nominal: 500000, jenisTransfer: 'Transfer Bank', buktiTransfer: 'bukti2.jpg', konfirmasi: 'konfirmasi' },
-                    { no: 3, idMhs: 'M003', idKas: 'K003', namaMhs: 'jangkrik', nominal: 500000, jenisTransfer: 'SPay E-wallet', buktiTransfer: 'bukti3.jpg', konfirmasi: 'konfirmasi' }
+                    { no: 1, idMhs: 'M001', idKas: 'K001', namaMhs: 'Memek', nominal: 500000, konfirmasi: 'konfirmasi' },
+                    { no: 2, idMhs: 'M002', idKas: 'K002', namaMhs: 'Gawuk', nominal: 500000, konfirmasi: 'konfirmasi' },
+                    { no: 3, idMhs: 'M003', idKas: 'K003', namaMhs: 'jangkrik', nominal: 500000, konfirmasi: 'konfirmasi' }
                 ];
 
             
@@ -132,8 +130,6 @@
                                     <td>${data.idKas}</td>
                                     <td>${data.namaMhs}</td>
                                     <td>${data.nominal}</td>
-                                    <td>${data.jenisTransfer}</td>
-                                    <td>${data.buktiTransfer}</td>
                                     <td><button class="btn btn-primary" onclick="konfirmasiPembayaran(${data.no})">${data.konfirmasi}</button></td>
                                 </tr>`;
                     tabelBody.innerHTML += row;

@@ -1,6 +1,22 @@
 <?php
   require("../config.php");
+  $db = new Database();
   session_start();
+  $id_mahasiswa = $_SESSION['id_mahasiswa'];
+  $query = "SELECT * FROM data_mahasiswa WHERE id_mahasiswa = '$id_mahasiswa'";
+  $res = $db->jalankan_query($query);
+  if (mysqli_num_rows($res) > 0) {
+    $row = mysqli_fetch_assoc($res);
+    $nama_mhs = $row['nama_mhs'];
+    $status_bayar = $row['status_bayar'];
+  }
+
+  $query = "SELECT email FROM login_mhs WHERE id_mahasiswa = '$id_mahasiswa'";
+  $res = $db->jalankan_query($query);
+  if (mysqli_num_rows($res) > 0) {
+    $row = mysqli_fetch_assoc($res);
+    $email = $row['email'];
+  }
   if (!isset($_SESSION['id_mahasiswa'])) {
       header("Location: ../login.php");
   }

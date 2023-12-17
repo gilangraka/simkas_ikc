@@ -17,6 +17,11 @@ class Database
     }
   }
 
+  function jalankan_query($query) {
+    $data =  mysqli_query($this->conn, $query);
+    return $data;
+  }
+
   function validasi_login()
   {
       if (isset($_POST["login"])) {
@@ -28,6 +33,8 @@ class Database
               $row = mysqli_fetch_assoc($res);
               $_SESSION['id_mahasiswa'] = $row['id_mahasiswa'];
               $_SESSION['role'] = $row['role'];
+              $_SESSION['email'] = $row['email'];
+              
               if($row['role'] == 'mahasiswa') {
                 header("Location: dashboard_users/dashboard.php");
                 exit();

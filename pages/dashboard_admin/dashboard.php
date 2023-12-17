@@ -104,9 +104,17 @@
                       </div>
                     </div>
                     <div class="col-7 col-md-8">
+                      <?php
+                        $query = "SELECT * FROM total_kas";
+                        $res = $db->jalankan_query($query);
+                        if (mysqli_num_rows($res) > 0) {
+                          $row = mysqli_fetch_assoc($res);
+                          $jumlah_kas = $row['jumlah_kas'];
+                        }
+                      ?>
                       <div class="numbers">
                         <p class="card-category">Total Saldo Kas Kelas</p>
-                        <p class="card-title">Rp 625000</p>
+                        <p class="card-title"><?= $jumlah_kas; ?></p>
                         <p></p>
                       </div>
                     </div>
@@ -148,9 +156,21 @@
                       <i class="fa fa-calendar-o"></i>
                       sampai 30 Desember 2023
                     </div>
-                    <button class="btn btn-primary btn-round">
-                      Bayar Sekarang
-                    </button>
+                    <?php 
+                      if($status_bayar == 0) {
+                    ?>
+                      <button class="btn btn-primary btn-round">
+                        Bayar Sekarang
+                      </button>
+                    <?php
+                      } else {
+                    ?>
+                      <button class="btn btn-primary btn-round" disabled>
+                        Sudah Bayar
+                      </button>
+                    <?php
+                      }
+                    ?>
                   </div>
                 </div>
               </div>
