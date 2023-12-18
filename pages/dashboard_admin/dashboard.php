@@ -206,12 +206,29 @@
                         while ($d = mysqli_fetch_array($res)) {
                         $status_kas = $d['status_kas'];
                         $jsonDecode = json_decode($status_kas);
+                        $getData = $jsonDecode->$id_mahasiswa;
                     ?>
                     <tr>
                       <td><?= $no++; ?></td>
                       <td><?= $d['deskripsi']; ?></td>
                       <td><?= $d['nominal']; ?></td>
-                      <td><?= $jsonDecode->sudah_bayar; ?></td>
+                      <td>
+                        <?php 
+                          if($getData == 0 ) {
+                          ?>
+                            <button class='btn btn-primary'>Bayar Sekarang</button>
+                          <?php
+                          } elseif($getData == 1) {
+                          ?>
+                            Menunggu Konfirmasi Bendahara
+                          <?php
+                          } elseif($getData == 2) {
+                          ?>
+                            Sudah Bayar
+                          <?php
+                          }
+                          ?>
+                      </td>
                       <td><?= $d['tanggal_masuk']; ?></td>
                     </tr>
                     <?php

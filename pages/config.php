@@ -4,7 +4,7 @@ class Database
 {
   var $host = "localhost";
   var $email = "root";
-  var $password = "";
+  var $password = "gilang123";
   var $database = "simkas_ikc";
   var $conn = "";
 
