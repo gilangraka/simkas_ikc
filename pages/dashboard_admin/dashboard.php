@@ -205,8 +205,9 @@
                       if($res) {
                         while ($d = mysqli_fetch_array($res)) {
                         $status_kas = $d['status_kas'];
-                        $jsonDecode = json_decode($status_kas);
+                        $jsonDecode = json_decode($status_kas, true);
                         $getData = $jsonDecode->$id_mahasiswa;
+                        $id_kas = $d['id_kas'];
                     ?>
                     <tr>
                       <td><?= $no++; ?></td>
@@ -216,7 +217,7 @@
                         <?php 
                           if($getData == 0 ) {
                           ?>
-                            <button class='btn btn-primary'>Bayar Sekarang</button>
+                            <a class='btn btn-primary text-white' href="fungsi_bayar.php?id_kas=<?= $id_kas; ?>&id_mhs=<?= $id_mahasiswa; ?>">Bayar Sekarang</a>
                           <?php
                           } elseif($getData == 1) {
                           ?>
