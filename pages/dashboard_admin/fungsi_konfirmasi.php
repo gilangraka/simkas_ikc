@@ -16,7 +16,7 @@
     $status_kas = json_decode($status_kas, true);
     $status_kas["$id_mhs"] = 2;
     $data_encode = json_encode($status_kas);
-    $db->jalankan_query("UPDATE data_kas_masuk_keluar SET status_kas = '$data_encode'");
+    $db->jalankan_query("UPDATE data_kas_masuk_keluar SET status_kas = '$data_encode' WHERE id_kas = '$id_kas'");
     $db->jalankan_query("DELETE FROM konfirmasi_kas_masuk WHERE id_kas = '$id_kas' AND id_mhs = '$id_mhs'");
     
     $res = $db->jalankan_query("SELECT * FROM total_kas");
