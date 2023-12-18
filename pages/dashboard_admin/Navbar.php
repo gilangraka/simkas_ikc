@@ -63,14 +63,14 @@
 
   <body class="">
       <div class="sidebar" data-color="white" data-active-color="danger">
-        <div class="logo">
+        <div class="logo d-flex align-items-center">
           <a href="#" class="simple-text logo-mini">
             <div class="logo-image-small">
-              <img src="../../assets/img/logo-small.png" />
+              <img src="../../assets/img/Artboard1.png" />
             </div>
             <!-- <p>CT</p> -->
           </a>
-          <a href="#" class="simple-text logo-normal"> Creative Tim </a>
+          <a href="#" class="simple-text logo-normal"> Simkas IKC </a>
         </div>
         <div class="sidebar-wrapper">
           <ul class="nav">

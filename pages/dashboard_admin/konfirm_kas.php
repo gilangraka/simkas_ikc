@@ -97,51 +97,35 @@
                     <thead>
                         <tr>
                             <th scope="col">No</th>
-                            <th scope="col">ID Mhs</th>
                             <th scope="col">ID Kas</th>
-                            <th scope="col">Nama Mhs</th>
+                            <th scope="col">ID Mahasiswa</th>
                             <th scope="col">Nominal</th>
+                            <th scope="col">Tanggal Bayar</th>
                             <th scope="col">Konfirmasi</th>
                         </tr>
                     </thead>
-                    <tbody id="tabelBody">
-                        
+                    <tbody>
+                      <?php
+                        $no = 1;
+                        $query = "SELECT * FROM konfirmasi_kas_masuk";
+                        $res = $db->jalankan_query($query);
+                        if(mysqli_num_rows($res) > 0) {
+                          while ($d = mysqli_fetch_array($res)) {
+                      ?>
+                      <tr>
+                        <td><?= $no++; ?></td>
+                        <td><?= $d['id_kas']; ?></td>
+                        <td><?= $d['id_mhs']; ?></td>
+                        <td><?= $d['nominal']; ?></td>
+                        <td><?= $d['tanggal_bayar']; ?></td>
+                        <td><a href="fungsi_konfirmasi.php?id_kas=<?= $d['id_kas']; ?>&id_mhs=<?= $d['id_mhs'] ?>" class="btn btn-primary">Konfirmasi</a></td>
+                      </tr>
+                      <?php
+                          }
+                        }
+                      ?>
                     </tbody>
                 </table>
-
-            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-            <script src="script.js"></script>
-            <script>
-            
-                const dataPembayaran = [
-                    { no: 1, idMhs: 'M001', idKas: 'K001', namaMhs: 'Memek', nominal: 500000, konfirmasi: 'konfirmasi' },
-                    { no: 2, idMhs: 'M002', idKas: 'K002', namaMhs: 'Gawuk', nominal: 500000, konfirmasi: 'konfirmasi' },
-                    { no: 3, idMhs: 'M003', idKas: 'K003', namaMhs: 'jangkrik', nominal: 500000, konfirmasi: 'konfirmasi' }
-                ];
-
-            
-                const tabelBody = document.getElementById('tabelBody');
-                dataPembayaran.forEach(data => {
-                    const row = `<tr>
-                                    <td>${data.no}</td>
-                                    <td>${data.idMhs}</td>
-                                    <td>${data.idKas}</td>
-                                    <td>${data.namaMhs}</td>
-                                    <td>${data.nominal}</td>
-                                    <td><button class="btn btn-primary" onclick="konfirmasiPembayaran(${data.no})">${data.konfirmasi}</button></td>
-                                </tr>`;
-                    tabelBody.innerHTML += row;
-                });
-
-            
-                function konfirmasiPembayaran(no) {
-                    const row = tabelBody.querySelector(`tr:nth-child(${no})`);
-                    row.remove();  // Menghapus baris dari tabel
-                }
-            </script>
-
         </div>
       </div>
     </div>

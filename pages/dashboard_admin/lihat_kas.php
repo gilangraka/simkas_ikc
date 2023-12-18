@@ -92,7 +92,7 @@ Coded by www.creative-tim.com
                       <h5 class="modal-title text-body" id="exampleModalLabel">Tambah Data Kas</h5>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <form method="post">
+                    <form action="fungsi_tambah_kas.php" method="post">
                       <div class="modal-body">
                         <div class="mb-3">
                           <label class="form-label text-body">Deskripsi Kas</label>
@@ -105,8 +105,7 @@ Coded by www.creative-tim.com
                         
                       </div>
                       <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary mr-2" data-bs-dismiss="modal">Tutup</button>
-                        <button type="submit" class="btn btn-primary" name="simpan">Simpan</button>
+                        <button type="submit" class="btn btn-primary" name="submit">Simpan</button>
                       </div>
                     </form>
                   </div>
@@ -122,10 +121,12 @@ Coded by www.creative-tim.com
                   <th>ID Kas</th>
                   <th>Nama Mahasiswa</th>
                   <th>Nominal</th>
-                  <th>Jenis Pembayaran</th>
-                  <th>Aksi</th>
+                  <th>Jenis Kas</th>
+                  <th>Deskripsi</th>
                 </tr>
               </thead>
+              <tbody>
+              </tbody>
             </table>
           </div>
         </div>

@@ -9,17 +9,19 @@
     if(mysqli_num_rows($res) > 0) {
         while ($d = mysqli_fetch_array($res)) {
             $status_kas = $d['status_kas'];
+            $nominal = $d['nominal'];
         }
     }
 
-    $query = "UPDATE INTO data_kas_masuk_keluar";
     $status_kas = json_decode($status_kas, true);
     $status_kas["$id_mhs"] = 1;
     $data_encode = json_encode($status_kas);
 
     $res = $db->jalankan_query("UPDATE data_kas_masuk_keluar SET status_kas = '$data_encode'");
     if($res) {
-        echo "<script>Berhasil Melakukan Pembayaran</script>";
+        $tanggal = date("Y-m-d");
+        $db->jalankan_query("INSERT INTO konfirmasi_kas_masuk VALUES ('$id_kas', '$id_mhs', '$nominal','$tanggal', 'Kas Masuk')");
+        echo "<script>alert(`Berhasil Melakukan Pembayaran`)</script>";
         header("Location: dashboard.php");
     }
 ?>

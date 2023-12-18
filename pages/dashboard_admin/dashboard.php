@@ -95,7 +95,7 @@
         <div class="content">
           <div class="row">
             <div class="col-lg-3 col-md-6 col-sm-6">
-              <div class="card card-stats" style="padding-bottom: 15px">
+              <div class="card card-stats">
                 <div class="card-body">
                   <div class="row">
                     <div class="col-5 col-md-4">
@@ -156,21 +156,6 @@
                       <i class="fa fa-calendar-o"></i>
                       sampai 30 Desember 2023
                     </div>
-                    <?php 
-                      if($status_bayar == 0) {
-                    ?>
-                      <button class="btn btn-primary btn-round">
-                        Bayar Sekarang
-                      </button>
-                    <?php
-                      } else {
-                    ?>
-                      <button class="btn btn-primary btn-round" disabled>
-                        Sudah Bayar
-                      </button>
-                    <?php
-                      }
-                    ?>
                   </div>
                 </div>
               </div>
@@ -216,7 +201,9 @@
                       <td>
                         <?php 
                           if($getData == 0 ) {
-                            echo "<a class='btn btn-primary text-white' href='fungsi_bayar.php?id_kas=<?= $id_kas; ?>&id_mhs=<?= $id_mahasiswa; ?>'>Bayar Sekarang</a>";
+                        ?>
+                            <a class='btn btn-primary text-white' href="fungsi_bayar.php?id_kas=<?= $id_kas; ?>&id_mhs=<?= $id_mahasiswa; ?>">Bayar Sekarang</a>
+                        <?php
                           } elseif($getData == 1) {
                             echo "Menunggu Konfirmasi Bendahara";
                           } elseif($getData == 2) {

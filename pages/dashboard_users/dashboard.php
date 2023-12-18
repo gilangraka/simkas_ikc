@@ -95,7 +95,7 @@
         <div class="content">
           <div class="row">
             <div class="col-lg-3 col-md-6 col-sm-6">
-              <div class="card card-stats" style="padding-bottom: 15px">
+              <div class="card card-stats">
                 <div class="card-body">
                   <div class="row">
                     <div class="col-5 col-md-4">
@@ -156,21 +156,6 @@
                       <i class="fa fa-calendar-o"></i>
                       sampai 30 Desember 2023
                     </div>
-                    <?php 
-                      if($status_bayar == 0) {
-                    ?>
-                      <button class="btn btn-primary btn-round">
-                        Bayar Sekarang
-                      </button>
-                    <?php
-                      } else {
-                    ?>
-                      <button class="btn btn-primary btn-round" disabled>
-                        Sudah Bayar
-                      </button>
-                    <?php
-                      }
-                    ?>
                   </div>
                 </div>
               </div>
@@ -191,195 +176,47 @@
                 <thead>
                   <tr>
                     <th>NO</th>
-                    <th>ID KAS</th>
                     <th>KETERANGAN</th>
                     <th>NOMINAL</th>
                     <th>STATUS BAYAR</th>
-                    <th>TANGGAL BAYAR</th>
-                    <th>METODE PEMBAYARAN</th>
+                    <th>TANGGAL MASUK</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>123213124</td>
-                    <td>Kas Bulan Desember</td>
-                    <td>20000</td>
-                    <td>Menunggu Konfirmasi</td>
-                    <td>12-12-2023</td>
-                    <td>Tunai</td>
-                  </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>123213124</td>
-                    <td>Kas Bulan Desember</td>
-                    <td>20000</td>
-                    <td>Menunggu Konfirmasi</td>
-                    <td>12-12-2023</td>
-                    <td>Tunai</td>
-                  </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>123213124</td>
-                    <td>Kas Bulan Desember</td>
-                    <td>20000</td>
-                    <td>Menunggu Konfirmasi</td>
-                    <td>12-12-2023</td>
-                    <td>Tunai</td>
-                  </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>123213124</td>
-                    <td>Kas Bulan Desember</td>
-                    <td>20000</td>
-                    <td>Menunggu Konfirmasi</td>
-                    <td>12-12-2023</td>
-                    <td>Tunai</td>
-                  </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>123213124</td>
-                    <td>Kas Bulan Desember</td>
-                    <td>20000</td>
-                    <td>Menunggu Konfirmasi</td>
-                    <td>12-12-2023</td>
-                    <td>Tunai</td>
-                  </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>123213124</td>
-                    <td>Kas Bulan Desember</td>
-                    <td>20000</td>
-                    <td>Menunggu Konfirmasi</td>
-                    <td>12-12-2023</td>
-                    <td>Tunai</td>
-                  </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>123213124</td>
-                    <td>Kas Bulan Desember</td>
-                    <td>20000</td>
-                    <td>Menunggu Konfirmasi</td>
-                    <td>12-12-2023</td>
-                    <td>Tunai</td>
-                  </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>123213124</td>
-                    <td>Kas Bulan Desember</td>
-                    <td>20000</td>
-                    <td>Menunggu Konfirmasi</td>
-                    <td>12-12-2023</td>
-                    <td>Tunai</td>
-                  </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>123213124</td>
-                    <td>Kas Bulan Desember</td>
-                    <td>20000</td>
-                    <td>Menunggu Konfirmasi</td>
-                    <td>12-12-2023</td>
-                    <td>Tunai</td>
-                  </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>123213124</td>
-                    <td>Kas Bulan Desember</td>
-                    <td>20000</td>
-                    <td>Menunggu Konfirmasi</td>
-                    <td>12-12-2023</td>
-                    <td>Tunai</td>
-                  </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>123213124</td>
-                    <td>Kas Bulan Desember</td>
-                    <td>20000</td>
-                    <td>Menunggu Konfirmasi</td>
-                    <td>12-12-2023</td>
-                    <td>Tunai</td>
-                  </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>123213124</td>
-                    <td>Kas Bulan Desember</td>
-                    <td>20000</td>
-                    <td>Menunggu Konfirmasi</td>
-                    <td>12-12-2023</td>
-                    <td>Tunai</td>
-                  </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>123213124</td>
-                    <td>Kas Bulan Desember</td>
-                    <td>20000</td>
-                    <td>Menunggu Konfirmasi</td>
-                    <td>12-12-2023</td>
-                    <td>Tunai</td>
-                  </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>123213124</td>
-                    <td>Kas Bulan Desember</td>
-                    <td>20000</td>
-                    <td>Menunggu Konfirmasi</td>
-                    <td>12-12-2023</td>
-                    <td>Tunai</td>
-                  </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>123213124</td>
-                    <td>Kas Bulan Desember</td>
-                    <td>20000</td>
-                    <td>Menunggu Konfirmasi</td>
-                    <td>12-12-2023</td>
-                    <td>Tunai</td>
-                  </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>123213124</td>
-                    <td>Kas Bulan Desember</td>
-                    <td>20000</td>
-                    <td>Menunggu Konfirmasi</td>
-                    <td>12-12-2023</td>
-                    <td>Tunai</td>
-                  </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>123213124</td>
-                    <td>Kas Bulan Desember</td>
-                    <td>20000</td>
-                    <td>Menunggu Konfirmasi</td>
-                    <td>12-12-2023</td>
-                    <td>Tunai</td>
-                  </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>123213124</td>
-                    <td>Kas Bulan Desember</td>
-                    <td>20000</td>
-                    <td>Menunggu Konfirmasi</td>
-                    <td>12-12-2023</td>
-                    <td>Tunai</td>
-                  </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>123213124</td>
-                    <td>Kas Bulan Desember</td>
-                    <td>20000</td>
-                    <td>Menunggu Konfirmasi</td>
-                    <td>12-12-2023</td>
-                    <td>Tunai</td>
-                  </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>123213124</td>
-                    <td>Kas Bulan Desember</td>
-                    <td>20000</td>
-                    <td>Menunggu Konfirmasi</td>
-                    <td>12-12-2023</td>
-                    <td>Tunai</td>
-                  </tr>
+                    <?php
+                      $no = 1;
+                      $query = "SELECT * FROM data_kas_masuk_keluar";
+                      $res = $db->jalankan_query($query);
+                      if(mysqli_num_rows($res) > 0) {
+                        while ($d = mysqli_fetch_array($res)) {
+                        $status_kas = $d['status_kas'];
+                        $jsonDecode = json_decode($status_kas);
+                        $getData = $jsonDecode->$id_mahasiswa;
+                        $id_kas = $d['id_kas'];
+                    ?>
+                    <tr>
+                      <td><?= $no++; ?></td>
+                      <td><?= $d['deskripsi']; ?></td>
+                      <td><?= $d['nominal']; ?></td>
+                      <td>
+                        <?php 
+                          if($getData == 0 ) {
+                        ?>
+                            <a class='btn btn-primary text-white' href="fungsi_bayar.php?id_kas=<?= $id_kas; ?>&id_mhs=<?= $id_mahasiswa; ?>">Bayar Sekarang</a>
+                        <?php
+                          } elseif($getData == 1) {
+                            echo "Menunggu Konfirmasi Bendahara";
+                          } elseif($getData == 2) {
+                            echo "Sudah Bayar";
+                          }
+                          ?>
+                      </td>
+                      <td><?= $d['tanggal_masuk']; ?></td>
+                    </tr>
+                    <?php
+                        }
+                      }
+                    ?>
                 </tbody>
               </table>
             </div>
