@@ -202,10 +202,10 @@
                       $no = 1;
                       $query = "SELECT * FROM data_kas_masuk_keluar";
                       $res = $db->jalankan_query($query);
-                      if($res) {
+                      if(mysqli_num_rows($res) > 0) {
                         while ($d = mysqli_fetch_array($res)) {
                         $status_kas = $d['status_kas'];
-                        $jsonDecode = json_decode($status_kas, true);
+                        $jsonDecode = json_decode($status_kas);
                         $getData = $jsonDecode->$id_mahasiswa;
                         $id_kas = $d['id_kas'];
                     ?>
@@ -216,17 +216,11 @@
                       <td>
                         <?php 
                           if($getData == 0 ) {
-                          ?>
-                            <a class='btn btn-primary text-white' href="fungsi_bayar.php?id_kas=<?= $id_kas; ?>&id_mhs=<?= $id_mahasiswa; ?>">Bayar Sekarang</a>
-                          <?php
+                            echo "<a class='btn btn-primary text-white' href='fungsi_bayar.php?id_kas=<?= $id_kas; ?>&id_mhs=<?= $id_mahasiswa; ?>'>Bayar Sekarang</a>";
                           } elseif($getData == 1) {
-                          ?>
-                            Menunggu Konfirmasi Bendahara
-                          <?php
+                            echo "Menunggu Konfirmasi Bendahara";
                           } elseif($getData == 2) {
-                          ?>
-                            Sudah Bayar
-                          <?php
+                            echo "Sudah Bayar";
                           }
                           ?>
                       </td>
