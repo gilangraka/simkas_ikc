@@ -17,7 +17,7 @@
     $status_kas["$id_mhs"] = 1;
     $data_encode = json_encode($status_kas);
 
-    $res = $db->jalankan_query("UPDATE data_kas_masuk_keluar SET status_kas = '$data_encode' WHERE id_kas = '$id_kas' AND id_mhs = '$id_mhs'");
+    $res = $db->jalankan_query("UPDATE data_kas_masuk_keluar SET status_kas = '$data_encode' WHERE id_kas = '$id_kas'");
     if($res) {
         $tanggal = date("Y-m-d");
         $db->jalankan_query("INSERT INTO konfirmasi_kas_masuk VALUES ('$id_kas', '$id_mhs', '$nominal','$tanggal', 'Kas Masuk')");
