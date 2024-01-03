@@ -1,10 +1,10 @@
 # Sistem Informasi Manajemen Kas (SIMKAS) IK-C 2022
 
 [Link Website](https://simkas.kelastanpaac.my.id)
-Username / ID : 
+### Username / ID : 
 - 33422208 (Role mahasiswa / user biasa)
 - 33422215 (Role bendahara)
-Password : polines2023
+### Password : polines2023
 
 SIMKAS IK-C merupakan aplikasi manajemen kas berbasis website yang berfungsi untuk mempermudah pencatatan kas bulanan bagi bendahara. Alasan kami membuat aplikasi ini adalah karena pada awalnya bendahara harus mencatat secara manual data kas masuk maupun data kas keluar melalui Google Spreadsheet. Maka dari itu, kami membuat aplikasi SIMKAS yang memiliki beberapa fitur memudahkan pencatatan bagi bendahara, diantaranya :
 - Untuk membuat tagihan kas bulanan, bendahara hanya perlu menulis nominal dan klik "Buat Tagihan", dan data tagihan akan masuk ke semua anggota kelas (termasuk bendahara).
